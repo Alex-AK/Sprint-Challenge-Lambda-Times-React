@@ -4,26 +4,15 @@ import { cardData, tabData } from './data';
 
 import TopBar from './components/TopBar';
 import Header from './components/Header';
-import Content from './components/Content/Content';
+import Content from './components/Content/Content.jsx';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      tabData: [],
-      cardData: []
-    };
+    this.state = {};
   }
 
-  componentDidMount = () => {
-    this.setState({
-      tabData: tabData,
-      cardData: cardData
-    });
-  };
-
   render() {
-    console.log(this.state.cardData);
     return (
       <div className="App">
         <TopBar />
