@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tab from './Tab';
 const Tabs = props => {
   const printTabs = props.tabs.map(tab => (
@@ -23,4 +24,11 @@ const Tabs = props => {
 };
 
 // Make sure to use PropTypes to validate your types!
+
+Tabs.propTypes = {
+  tabs: PropTypes.array.isRequired,
+  changeSelected: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired
+};
+
 export default Tabs;

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import Tabs from './Tabs';
 import Cards from './Cards';
+import Tabs from './Tabs';
 
 // Importing our tab and card data. No need to change anything here.
 import { tabData, cardData } from '../../data';

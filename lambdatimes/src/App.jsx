@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import TopBar from './components/TopBar';
-import Header from './components/Header';
 import Content from './components/Content/Content.jsx';
+import Header from './components/Header';
+import TopBar from './components/TopBar';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <TopBar />
-        <Header />
-        <Content />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <TopBar />
+      <Header />
+      <Content />
+    </div>
+  );
+};
 
 export default App;
