@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { cardData, tabData } from './data';
-
 import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Content from './components/Content/Content.jsx';
