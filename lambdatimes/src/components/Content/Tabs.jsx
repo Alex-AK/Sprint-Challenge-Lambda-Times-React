@@ -1,7 +1,14 @@
 import React from 'react';
 import Tab from './Tab';
 const Tabs = props => {
-  const printTabs = props.tabs.map(tab => <Tab key={tab} tab={tab} />);
+  const printTabs = props.tabs.map(tab => (
+    <Tab
+      key={tab}
+      tab={tab}
+      changeSelected={props.changeSelected}
+      selectedTab={props.selectedTab}
+    />
+  ));
 
   return (
     <div className="tabs">
