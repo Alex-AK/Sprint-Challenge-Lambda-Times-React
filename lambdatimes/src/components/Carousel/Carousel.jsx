@@ -14,20 +14,28 @@ export default class Carousel extends Component {
   }
 
   leftClick = () => {
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1
-    }));
+    if (this.state.currentIndex === 0) {
+      this.setState({
+        currentIndex: this.state.carouselData.length - 1
+      });
+    } else {
+      this.setState(prevState => ({
+        currentIndex: prevState.currentIndex - 1
+      }));
+    }
   };
 
   rightClick = () => {
-    // if (this.state.currentIndex > this.state.carouselData.length - 1) {
-    //   // if 0, 1, 2, 3 === 3
-    //   this.setState({
-    //     currentIndex: 0
-    //   });
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1
-    }));
+    if (this.state.currentIndex >= this.state.carouselData.length - 1) {
+      // if 0, 1, 2, 3 === 3
+      this.setState({
+        currentIndex: 0
+      });
+    } else {
+      this.setState(prevState => ({
+        currentIndex: prevState.currentIndex + 1
+      }));
+    }
   };
 
   selectedImage = () => {
