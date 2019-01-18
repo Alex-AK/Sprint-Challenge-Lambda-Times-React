@@ -12,8 +12,7 @@ export default class Content extends Component {
     this.state = {
       selected: 'all',
       tabs: [],
-      cards: [],
-      selectedTab: 'all'
+      cards: []
     };
   }
 
@@ -26,11 +25,22 @@ export default class Content extends Component {
   }
 
   changeSelected = tab => {
-    this.setState({ selectedTab: tab });
+    this.setState({ selected: tab });
     // this function should take in the tab and update the state with the new tab.
   };
 
   filterCards = () => {
+    const filtered = this.state.cards.filter(card =>
+      card.tab.includes(this.state.selected)
+    );
+    const allSelected = this.state.selected === 'all';
+
+    if (allSelected) {
+      return this.state.cards;
+    }
+    return filtered;
+
+    // return this.state.cards;
     /* Right now this function only returns the cards on state.
       We're going to make this function more dynamic
       by using it to filter out our cards for when a tab is selcted
@@ -43,7 +53,6 @@ export default class Content extends Component {
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
-    return this.state.cards;
   };
 
   render() {
@@ -57,7 +66,7 @@ export default class Content extends Component {
         <Tabs
           tabs={this.state.tabs}
           changeSelected={this.changeSelected}
-          selectedTab={this.state.selectedTab}
+          selected={this.state.selected}
         />
         <Cards cards={this.filterCards()} />
       </div>
